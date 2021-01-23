@@ -4,7 +4,7 @@ services:
     container_name: default
     build: ./src/default
     volumes:
-      - "./src/default:/app"
+      - "./src/default:/src"
     ports:
       - "8501:8501"
     environment:
