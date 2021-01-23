@@ -1,0 +1,19 @@
+version: "3.0"
+services:
+  default:
+    container_name: default
+    build: ./src/default
+    volumes:
+      - "./src/default:/app"
+    ports:
+      - "8501:8501"
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+  static:
+    container_name: static
+    image: nginx:1.19.6
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./default.conf:/etc/nginx/conf.d/default.conf"
