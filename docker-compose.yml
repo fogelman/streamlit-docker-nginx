@@ -5,8 +5,11 @@ services:
     build: ./src/default
     volumes:
       - "./src/default:/src"
-    ports:
-      - "8501:8501"
+  crypto:
+    container_name: crypto
+    build: ./src/crypto
+    volumes:
+      - "./src/crypto:/src"
   static:
     container_name: static
     image: nginx:1.19.6
